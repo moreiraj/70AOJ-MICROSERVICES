@@ -1,0 +1,27 @@
+<div>
+    <h3>Adicionar Novo Usuario</h3>
+  </div>
+  <form class="example-container" [formGroup]="usuarioForm" (ngSubmit)="addUsuario(usuarioForm.value)">
+      <mat-form-field>
+          <mat-label>Setor</mat-label>
+          <mat-select matInput name="setor" formControlName="setor" >
+            <mat-option *ngFor="let itemSetor of dsSetor" [value]="itemSetor">
+              {{itemSetor.nome}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+    <mat-form-field>
+      <input matInput name="nome" placeholder="Nome do Usuario" formControlName="nome">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput name="email" placeholder="Email do Usuario" formControlName="email">
+    </mat-form-field>
+    <mat-form-field>
+        <input  matInput name="senha" placeholder="Senha do Usuario" formControlName="senha">
+      </mat-form-field>
+    <mat-form-field>
+      <input matInput name="idade" placeholder="Idade do Usuario" formControlName="idade">
+    </mat-form-field>
+  
+    <button type="submit"  mat-button color="primary" >Adicionar</button>
+  </form>

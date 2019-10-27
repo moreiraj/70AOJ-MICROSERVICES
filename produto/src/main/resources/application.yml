@@ -1,0 +1,24 @@
+spring:
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/iblind?useTimezone=true&serverTimezone=UTC&useSSL=false&createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true
+    username: sa
+    password: senha123
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    properties:
+      hibernate:
+        show_sql: true
+        hbm2ddl:
+          auto: update
+  application:
+    name: produtos-service
+
+server:
+  port: 8083
+eureka:
+  client:
+  registerWithEureka: true
+  fetchRegistry: true
+  serviceUrl:
+    defaultZone: http://localhost:8761/eureka/
